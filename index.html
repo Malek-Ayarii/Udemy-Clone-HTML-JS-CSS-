@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learnly, plateforme de cours en ligne : HTML, CSS et JavaScript.">
+  <title>Learnly - Apprenez le développement web en ligne</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><span class="logo-mark">L</span>Learnly</a>
+
+      <form class="search" role="search" action="index.html">
+        <label for="search" class="sr-only">Rechercher un cours</label>
+        <input type="search" id="search" name="q" placeholder="Rechercher un cours, un sujet…">
+      </form>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="#cours">Cours</a></li>
+          <li><a href="#avantages">Avantages</a></li>
+          <li><a class="btn" href="#inscription">Se connecter</a></li>
+          <li><a class="btn btn-dark" href="#inscription">S’inscrire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Nouveau : 3 cours gratuits</p>
+          <h1>Apprenez le web <span>à votre rythme</span></h1>
+          <p>Des cours courts en vidéo, des exemples de code et une barre de progression pour suivre vos avancées, leçon après leçon.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cours">Explorer les cours</a>
+            <a class="btn" href="cours-html.html">Commencer par HTML</a>
+          </div>
+        </div>
+        <img src="images/hero.svg" alt="Illustration d’un ordinateur affichant un cours vidéo" width="560" height="420">
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <p class="stat"><strong>12 000+</strong><span>apprenants</span></p>
+        <p class="stat"><strong>3</strong><span>cours disponibles</span></p>
+        <p class="stat"><strong>4,8/5</strong><span>note moyenne</span></p>
+        <p class="stat"><strong>100 %</strong><span>en ligne</span></p>
+      </div>
+    </div>
+
+    <section class="section" id="cours">
+      <div class="container">
+        <div class="section-head">
+          <h2>Un large choix de cours</h2>
+          <p>Choisissez un cours et suivez votre progression en temps réel.</p>
+        </div>
+
+        <div class="filters">
+          <button class="filter active" type="button" data-filter="all" aria-pressed="true">Tous</button>
+          <button class="filter" type="button" data-filter="web" aria-pressed="false">Développement web</button>
+          <button class="filter" type="button" data-filter="design" aria-pressed="false">Design</button>
+          <button class="filter" type="button" data-filter="code" aria-pressed="false">Programmation</button>
+        </div>
+
+        <div class="course-grid">
+          <article class="card" data-category="web">
+            <a class="card-link" href="cours-html.html">
+              <img src="images/html.svg" alt="" width="480" height="270">
+              <div class="card-body">
+                <h3>HTML5 : les fondamentaux du web</h3>
+                <p class="card-author">Sara Benali</p>
+                <p class="rating"><strong>4,8</strong><span class="stars" aria-hidden="true">★★★★★</span><span class="muted">(2 341)</span></p>
+                <p class="card-meta">4 leçons · 1 h 10 · Débutant</p>
+                <span class="badge">Bestseller</span>
+                <div class="card-progress" data-course="html" data-total="4">
+                  <div class="progress-track"><span class="progress-fill"></span></div>
+                  <small>0 % terminé</small>
+                </div>
+                <p class="price"><strong>Gratuit</strong><s>49,99 €</s></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="card" data-category="design">
+            <a class="card-link" href="cours-css.html">
+              <img src="images/css.svg" alt="" width="480" height="270">
+              <div class="card-body">
+                <h3>CSS3 moderne : Flexbox, Grid et responsive</h3>
+                <p class="card-author">Yassine Haddad</p>
+                <p class="rating"><strong>4,7</strong><span class="stars" aria-hidden="true">★★★★★</span><span class="muted">(1 876)</span></p>
+                <p class="card-meta">4 leçons · 2 h 05 · Intermédiaire</p>
+                <span class="badge">Populaire</span>
+                <div class="card-progress" data-course="css" data-total="4">
+                  <div class="progress-track"><span class="progress-fill"></span></div>
+                  <small>0 % terminé</small>
+                </div>
+                <p class="price"><strong>Gratuit</strong><s>59,99 €</s></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="card" data-category="code">
+            <a class="card-link" href="cours-js.html">
+              <img src="images/js.svg" alt="" width="480" height="270">
+              <div class="card-body">
+                <h3>JavaScript pour débutants : rendre vos pages vivantes</h3>
+                <p class="card-author">Amine Karim</p>
+                <p class="rating"><strong>4,9</strong><span class="stars" aria-hidden="true">★★★★★</span><span class="muted">(3 102)</span></p>
+                <p class="card-meta">4 leçons · 1 h 45 · Débutant</p>
+                <span class="badge">Mieux noté</span>
+                <div class="card-progress" data-course="js" data-total="4">
+                  <div class="progress-track"><span class="progress-fill"></span></div>
+                  <small>0 % terminé</small>
+                </div>
+                <p class="price"><strong>Gratuit</strong><s>54,99 €</s></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="card card-soon" data-category="design">
+            <div class="card-link">
+              <img src="images/figma.svg" alt="" width="480" height="270">
+              <div class="card-body">
+                <h3>Figma : maquetter une interface de A à Z</h3>
+                <p class="card-author">Lina Mansouri</p>
+                <p class="card-meta">Débutant</p>
+                <span class="badge badge-soon">Bientôt disponible</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-soon" data-category="web">
+            <div class="card-link">
+              <img src="images/git.svg" alt="" width="480" height="270">
+              <div class="card-body">
+                <h3>Git et GitHub : versionner son code</h3>
+                <p class="card-author">Omar Tazi</p>
+                <p class="card-meta">Débutant</p>
+                <span class="badge badge-soon">Bientôt disponible</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-soon" data-category="code">
+            <div class="card-link">
+              <img src="images/python.svg" alt="" width="480" height="270">
+              <div class="card-body">
+                <h3>Python : les bases de la programmation</h3>
+                <p class="card-author">Nadia Cherif</p>
+                <p class="card-meta">Débutant</p>
+                <span class="badge badge-soon">Bientôt disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="empty" id="empty" hidden>Aucun cours ne correspond à votre recherche. Essayez un autre mot-clé.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="avantages">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pourquoi apprendre avec Learnly ?</h2>
+          <p>Tout ce qu’il faut pour progresser, sans vous perdre.</p>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">🎬</div>
+            <h3>Vidéos et exemples</h3>
+            <p>Chaque leçon combine vidéo, texte, schémas et extraits de code à copier.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">📈</div>
+            <h3>Progression visuelle</h3>
+            <p>Marquez vos leçons terminées : la barre de progression se met à jour et reste enregistrée.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">📱</div>
+            <h3>Partout, tout le temps</h3>
+            <p>Sur ordinateur, tablette ou téléphone, la plateforme s’adapte à votre écran.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="inscription">
+      <div class="container">
+        <div class="signup">
+          <div>
+            <h2>Créez votre compte gratuit</h2>
+            <p>Recevez les nouveaux cours dès leur sortie.</p>
+          </div>
+          <form class="signup-form" id="signup-form" action="index.html">
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="nom@exemple.com" required>
+            <button class="btn btn-primary" type="submit">Créer mon compte</button>
+            <p class="form-message" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><span class="logo-mark">L</span>Learnly</a>
+          <p>Mini plateforme de cours en ligne réalisée en HTML5, CSS3 et JavaScript.</p>
+        </div>
+        <div>
+          <h2>Cours</h2>
+          <ul>
+            <li><a href="cours-html.html">HTML5</a></li>
+            <li><a href="cours-css.html">CSS3</a></li>
+            <li><a href="cours-js.html">JavaScript</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Learnly</h2>
+          <ul>
+            <li><a href="#avantages">Avantages</a></li>
+            <li><a href="#inscription">Inscription</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© 2026 Learnly - Projet mini LMS.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

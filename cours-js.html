@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cours JavaScript : variables, DOM et événements pour rendre vos pages interactives.">
+  <title>JavaScript pour débutants - Learnly</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-course="js">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><span class="logo-mark">L</span>Learnly</a>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#cours" aria-current="page">Cours</a></li>
+          <li><a href="index.html#avantages">Avantages</a></li>
+          <li><a class="btn" href="index.html#inscription">Se connecter</a></li>
+          <li><a class="btn btn-dark" href="index.html#inscription">S’inscrire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="course-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d’Ariane">
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#cours">Programmation</a></li>
+            <li>JavaScript</li>
+          </ol>
+        </nav>
+        <h1>JavaScript pour débutants : rendre vos pages vivantes</h1>
+        <p class="subtitle">Apprenez les bases du langage et faites réagir vos pages aux actions de l’utilisateur.</p>
+        <p class="course-info">
+          <span class="rating"><strong>4,9</strong><span class="stars" aria-hidden="true">★★★★★</span>(3 102 avis)</span>
+          <span>Formateur : Amine Karim</span>
+          <span>4 leçons · 1 h 45</span>
+        </p>
+        <div class="course-progress">
+          <p><span>Votre progression</span><strong id="progress-text">0 %</strong></p>
+          <div class="progress-track" id="progress" role="progressbar" aria-label="Progression du cours" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span class="progress-fill"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container course-layout">
+      <aside class="curriculum" aria-label="Programme du cours">
+        <div class="curriculum-head">
+          <h2>Contenu du cours</h2>
+          <p>4 leçons · 1 h 45 au total</p>
+        </div>
+        <ol class="lesson-list">
+          <li><a href="#js-1"><span class="check" aria-hidden="true"></span>1. Introduction<small>35 min</small></a></li>
+          <li><a href="#js-2"><span class="check" aria-hidden="true"></span>2. Variables et fonctions<small>25 min</small></a></li>
+          <li><a href="#js-3"><span class="check" aria-hidden="true"></span>3. Le DOM<small>25 min</small></a></li>
+          <li><a href="#js-4"><span class="check" aria-hidden="true"></span>4. Les événements<small>20 min</small></a></li>
+        </ol>
+        <button class="reset" id="reset" type="button">Réinitialiser ma progression</button>
+      </aside>
+
+      <div class="lesson-area">
+        <article class="lesson" id="js-1">
+          <p class="lesson-label">Leçon 1 sur 4</p>
+          <h2>Introduction au JavaScript</h2>
+          <div class="video">
+            <iframe src="https://www.youtube-nocookie.com/embed/hdI2bqOjy3c" title="Vidéo : cours accéléré JavaScript" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>JavaScript</strong> est le langage de programmation du navigateur. Il permet de modifier la page sans la recharger : ouvrir un menu, valider un formulaire, afficher une barre de progression…</p>
+          <p>On place le script à la fin du <code>&lt;body&gt;</code>, dans un fichier séparé :</p>
+          <pre><code>&lt;script src="js/main.js"&gt;&lt;/script&gt;</code></pre>
+          <div class="tip">
+            <p><strong>Astuce :</strong> ouvrez la console du navigateur avec <code>F12</code> et tapez <code>console.log("Bonjour")</code> pour tester.</p>
+          </div>
+        </article>
+
+        <article class="lesson" id="js-2">
+          <p class="lesson-label">Leçon 2 sur 4</p>
+          <h2>Variables et fonctions</h2>
+          <p>Une <strong>variable</strong> stocke une valeur. On utilise <code>const</code> si elle ne change pas, et <code>let</code> si elle peut changer.</p>
+          <pre><code>const prenom = "Sara";   // texte (string)
+let score = 0;           // nombre (number)
+let estConnecte = true;  // booléen (boolean)
+const cours = ["HTML", "CSS", "JS"]; // tableau
+
+score = score + 10;
+console.log(prenom + " a " + score + " points");</code></pre>
+          <h3>Les fonctions</h3>
+          <p>Une <strong>fonction</strong> regroupe des instructions réutilisables. Elle peut recevoir des paramètres et renvoyer un résultat.</p>
+          <pre><code>function calculerProgression(terminees, total) {
+  return Math.round((terminees / total) * 100);
+}
+
+console.log(calculerProgression(2, 4)); // 50</code></pre>
+        </article>
+
+        <article class="lesson" id="js-3">
+          <p class="lesson-label">Leçon 3 sur 4</p>
+          <h2>Le DOM</h2>
+          <figure>
+            <img src="images/dom.svg" alt="Arbre du DOM : document, html, head et body, puis leurs éléments enfants" width="800" height="450" loading="lazy">
+            <figcaption>Le navigateur transforme le HTML en un arbre d’objets : le DOM.</figcaption>
+          </figure>
+          <p>Le <strong>DOM</strong> (Document Object Model) représente la page sous forme d’arbre. JavaScript peut sélectionner un élément de cet arbre puis le modifier.</p>
+          <pre><code>// Sélectionner
+const titre = document.querySelector("h1");
+const cartes = document.querySelectorAll(".card");
+
+// Modifier
+titre.textContent = "Nouveau titre";
+titre.classList.add("actif");
+titre.style.color = "#a435f0";</code></pre>
+        </article>
+
+        <article class="lesson" id="js-4">
+          <p class="lesson-label">Leçon 4 sur 4</p>
+          <h2>Les événements</h2>
+          <p>Un <strong>événement</strong> est une action de l’utilisateur : un clic, une saisie, un défilement… On l’écoute avec <code>addEventListener</code>.</p>
+          <pre><code>const bouton = document.querySelector("#demo-btn");
+let clics = 0;
+
+bouton.addEventListener("click", function () {
+  clics++;
+  document.querySelector("#demo-count").textContent = clics;
+});</code></pre>
+          <h3>Essayez vous-même</h3>
+          <div class="demo">
+            <button class="btn btn-primary" id="demo-btn" type="button">Cliquez-moi</button>
+            <p>Nombre de clics : <output id="demo-count">0</output></p>
+          </div>
+          <div class="tip">
+            <p><strong>Le saviez-vous ?</strong> Le menu burger et la barre de progression de ce site fonctionnent exactement de cette façon.</p>
+          </div>
+        </article>
+
+        <div class="lesson-nav">
+          <button class="btn" id="prev" type="button">← Précédent</button>
+          <button class="btn btn-primary" id="complete" type="button">Marquer comme terminée</button>
+          <button class="btn" id="next" type="button">Suivant →</button>
+        </div>
+
+        <div class="congrats" id="congrats" hidden>
+          <strong>🎉 Félicitations, vous avez terminé ce cours !</strong>
+          <p>Retournez au <a href="index.html#cours">catalogue</a> pour découvrir les autres cours.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">© 2026 Learnly - Projet mini LMS. <a href="index.html">Retour à l’accueil</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

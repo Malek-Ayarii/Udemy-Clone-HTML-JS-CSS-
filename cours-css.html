@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cours CSS3 : sélecteurs, modèle de boîte, Flexbox, Grid et responsive design.">
+  <title>CSS3 moderne : Flexbox, Grid et responsive - Learnly</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-course="css">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><span class="logo-mark">L</span>Learnly</a>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#cours" aria-current="page">Cours</a></li>
+          <li><a href="index.html#avantages">Avantages</a></li>
+          <li><a class="btn" href="index.html#inscription">Se connecter</a></li>
+          <li><a class="btn btn-dark" href="index.html#inscription">S’inscrire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="course-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d’Ariane">
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#cours">Design</a></li>
+            <li>CSS3</li>
+          </ol>
+        </nav>
+        <h1>CSS3 moderne : Flexbox, Grid et responsive</h1>
+        <p class="subtitle">Donnez du style à vos pages et créez des mises en page qui s’adaptent à tous les écrans.</p>
+        <p class="course-info">
+          <span class="rating"><strong>4,7</strong><span class="stars" aria-hidden="true">★★★★★</span>(1 876 avis)</span>
+          <span>Formateur : Yassine Haddad</span>
+          <span>4 leçons · 2 h 05</span>
+        </p>
+        <div class="course-progress">
+          <p><span>Votre progression</span><strong id="progress-text">0 %</strong></p>
+          <div class="progress-track" id="progress" role="progressbar" aria-label="Progression du cours" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span class="progress-fill"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container course-layout">
+      <aside class="curriculum" aria-label="Programme du cours">
+        <div class="curriculum-head">
+          <h2>Contenu du cours</h2>
+          <p>4 leçons · 2 h 05 au total</p>
+        </div>
+        <ol class="lesson-list">
+          <li><a href="#css-1"><span class="check" aria-hidden="true"></span>1. Introduction au CSS<small>25 min</small></a></li>
+          <li><a href="#css-2"><span class="check" aria-hidden="true"></span>2. Le modèle de boîte<small>20 min</small></a></li>
+          <li><a href="#css-3"><span class="check" aria-hidden="true"></span>3. Flexbox<small>40 min</small></a></li>
+          <li><a href="#css-4"><span class="check" aria-hidden="true"></span>4. Grid et responsive<small>40 min</small></a></li>
+        </ol>
+        <button class="reset" id="reset" type="button">Réinitialiser ma progression</button>
+      </aside>
+
+      <div class="lesson-area">
+        <article class="lesson" id="css-1">
+          <p class="lesson-label">Leçon 1 sur 4</p>
+          <h2>Introduction au CSS</h2>
+          <div class="video">
+            <iframe src="https://www.youtube-nocookie.com/embed/yfoY53QXEnI" title="Vidéo : cours accéléré CSS" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p>Le <strong>CSS</strong> (Cascading Style Sheets) décrit l’apparence d’une page : couleurs, polices, espacements, mise en page. On l’écrit dans un fichier séparé, relié au HTML avec la balise <code>&lt;link&gt;</code>.</p>
+          <pre><code>&lt;link rel="stylesheet" href="css/style.css"&gt;</code></pre>
+          <p>Une règle CSS est composée d’un <strong>sélecteur</strong> et de <strong>déclarations</strong> :</p>
+          <pre><code>h1 {
+  color: #a435f0;
+  font-size: 2rem;
+}
+
+.carte { border-radius: 8px; }  /* une classe */
+#menu  { display: flex; }       /* un identifiant */</code></pre>
+        </article>
+
+        <article class="lesson" id="css-2">
+          <p class="lesson-label">Leçon 2 sur 4</p>
+          <h2>Le modèle de boîte</h2>
+          <figure>
+            <img src="images/box-model.svg" alt="Schéma du modèle de boîte : contenu, padding, bordure et marge" width="800" height="450" loading="lazy">
+            <figcaption>Chaque élément HTML est une boîte composée de quatre couches.</figcaption>
+          </figure>
+          <ul>
+            <li><strong>content</strong> : le contenu (texte, image)</li>
+            <li><strong>padding</strong> : l’espace intérieur, autour du contenu</li>
+            <li><strong>border</strong> : la bordure</li>
+            <li><strong>margin</strong> : l’espace extérieur, entre les éléments</li>
+          </ul>
+          <pre><code>*, *::before, *::after {
+  box-sizing: border-box; /* la largeur inclut padding et bordure */
+}
+
+.carte {
+  padding: 16px;
+  border: 1px solid #d1d7dc;
+  margin-bottom: 24px;
+}</code></pre>
+          <div class="tip">
+            <p><strong>Astuce :</strong> ajoutez toujours <code>box-sizing: border-box</code>, les tailles deviennent beaucoup plus faciles à calculer.</p>
+          </div>
+        </article>
+
+        <article class="lesson" id="css-3">
+          <p class="lesson-label">Leçon 3 sur 4</p>
+          <h2>Flexbox</h2>
+          <div class="video">
+            <iframe src="https://www.youtube-nocookie.com/embed/JJSoEo8JSnc" title="Vidéo : Flexbox en 20 minutes" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>Flexbox</strong> sert à aligner des éléments sur <strong>une seule dimension</strong> : en ligne ou en colonne. C’est l’outil idéal pour une barre de navigation ou une rangée de boutons.</p>
+          <pre><code>.menu {
+  display: flex;
+  justify-content: space-between; /* axe principal */
+  align-items: center;            /* axe secondaire */
+  gap: 16px;
+}</code></pre>
+          <h3>Les propriétés essentielles</h3>
+          <ul>
+            <li><code>flex-direction</code> : <code>row</code> ou <code>column</code></li>
+            <li><code>flex-wrap: wrap</code> : passe à la ligne si manque de place</li>
+            <li><code>flex: 1</code> : l’élément prend l’espace disponible</li>
+          </ul>
+        </article>
+
+        <article class="lesson" id="css-4">
+          <p class="lesson-label">Leçon 4 sur 4</p>
+          <h2>Grid et responsive</h2>
+          <div class="video">
+            <iframe src="https://www.youtube-nocookie.com/embed/jV8B24rSN5o" title="Vidéo : CSS Grid, cours accéléré" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p><strong>CSS Grid</strong> gère la mise en page en <strong>deux dimensions</strong> : lignes et colonnes. La grille des cours de la page d’accueil utilise cette technique :</p>
+          <pre><code>.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}</code></pre>
+          <h3>Les media queries</h3>
+          <p>Elles appliquent des styles selon la taille de l’écran. On adapte ainsi la page pour mobile, tablette et ordinateur.</p>
+          <pre><code>/* Tablette */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .menu { flex-direction: column; }
+}</code></pre>
+          <div class="tip">
+            <p><strong>À retenir :</strong> Flexbox pour aligner sur une ligne, Grid pour construire la structure de la page.</p>
+          </div>
+        </article>
+
+        <div class="lesson-nav">
+          <button class="btn" id="prev" type="button">← Précédent</button>
+          <button class="btn btn-primary" id="complete" type="button">Marquer comme terminée</button>
+          <button class="btn" id="next" type="button">Suivant →</button>
+        </div>
+
+        <div class="congrats" id="congrats" hidden>
+          <strong>🎉 Félicitations, vous avez terminé ce cours !</strong>
+          <p>Continuez avec le cours <a href="cours-js.html">JavaScript pour débutants</a>.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">© 2026 Learnly - Projet mini LMS. <a href="index.html">Retour à l’accueil</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

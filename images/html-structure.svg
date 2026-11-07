@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" font-family="Consolas, monospace" font-size="22" text-anchor="middle">
+  <rect width="800" height="450" fill="#f7f9fa"/>
+  <rect x="40" y="30" width="720" height="70" rx="8" fill="#e44d26"/><text x="400" y="73" fill="#fff">&lt;header&gt;</text>
+  <rect x="40" y="115" width="720" height="50" rx="8" fill="#f16529"/><text x="400" y="148" fill="#fff">&lt;nav&gt;</text>
+  <rect x="40" y="180" width="500" height="170" rx="8" fill="#a435f0"/><text x="290" y="255" fill="#fff">&lt;main&gt;</text>
+  <rect x="70" y="275" width="440" height="55" rx="6" fill="#fff" opacity=".25"/><text x="290" y="310" fill="#fff" font-size="18">&lt;article&gt;</text>
+  <rect x="555" y="180" width="205" height="170" rx="8" fill="#1572b6"/><text x="657" y="272" fill="#fff">&lt;aside&gt;</text>
+  <rect x="40" y="365" width="720" height="60" rx="8" fill="#1c1d1f"/><text x="400" y="403" fill="#fff">&lt;footer&gt;</text>
+</svg>

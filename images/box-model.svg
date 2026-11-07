@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">
+  <rect width="800" height="450" fill="#fff"/>
+  <rect x="60" y="30" width="680" height="390" rx="6" fill="#f9cc9d" stroke="#b4690e" stroke-dasharray="8 6"/><text x="80" y="62" fill="#7a4708">margin</text>
+  <rect x="130" y="85" width="540" height="280" rx="4" fill="#1c1d1f"/><text x="150" y="115" fill="#fff">border</text>
+  <rect x="150" y="130" width="500" height="215" fill="#c3e6cb"/><text x="170" y="160" fill="#0d5223">padding</text>
+  <rect x="250" y="185" width="300" height="110" fill="#8fc1ec" stroke="#1572b6"/><text x="400" y="248" fill="#0b3d66" text-anchor="middle">content</text>
+</svg>
